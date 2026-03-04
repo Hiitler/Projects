@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodi: The Nerd Coder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+        <header>
+            <h1><span class="prompt">></span> Moodi: The Nerd Coder <span class="cursor">_</span></h1>
+            <div id="location-indicator">LOCATION: BEDROOM</div>
+        </header>
+
+        <main>
+            <!-- Exploration View -->
+            <div id="exploration-screen" class="game-screen">
+                <div id="game-world">
+                    <!-- Rooms and objects will be rendered here -->
+                    <div id="player-avatar">M</div>
+                </div>
+                <div class="controls-hint">
+                    [ARROWS] Move | [SPACE] Interact
+                </div>
+            </div>
+
+            <!-- Combat View (Hidden by default) -->
+            <div id="combat-screen" class="game-screen hidden">
+                <div class="scene">
+                    <div id="enemy-area">
+                        <div id="enemy-visual">
+                            <pre id="enemy-art"></pre>
+                        </div>
+                        <div id="enemy-stats">
+                            <h2 id="enemy-name">ENEMY</h2>
+                            <div class="health-bar-container">
+                                <div class="health-bar" id="enemy-hp-bar" style="width: 100%;"></div>
+                            </div>
+                            <p>HP: <span id="enemy-hp">100</span>/<span id="enemy-max-hp">100</span></p>
+                        </div>
+                    </div>
+
+                    <div id="player-area">
+                        <div id="player-stats">
+                            <h2>MOODI</h2>
+                            <div class="health-bar-container">
+                                <div class="health-bar player-hp" id="player-hp-bar" style="width: 100%;"></div>
+                            </div>
+                            <p>HP: <span id="player-hp">100</span>/<span id="player-max-hp">100</span></p>
+                            <p>LVL: <span id="player-lvl">1</span></p>
+                        </div>
+                        <div id="player-visual">
+                            <pre>
+   (O_O)
+  /|___|\
+   d   b
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="console-log" id="combat-log"></div>
+                <div class="controls">
+                    <button id="btn-attack" class="action-btn"><span class="icon">⌨️</span> CODE</button>
+                    <button id="btn-heal" class="action-btn"><span class="icon">☕</span> COFFEE</button>
+                    <button id="btn-special" class="action-btn"><span class="icon">🐛</span> DEBUG</button>
+                </div>
+            </div>
+
+            <div class="console-log" id="world-log">
+                <p class="system-msg">[SYSTEM] World loaded. Use Arrow Keys to move.</p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
